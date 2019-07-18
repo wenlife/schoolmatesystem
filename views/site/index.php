@@ -40,7 +40,7 @@ window.onload= function(){
 var imgs =["/image/p1.jpg", "/image/p2.jpg", "/image/p3.jpg"];    //（设定想要显示的图片）
 var i = 0;
 var head=document.getElementById("head");//获取DIV对象
-head.style.backgroundImage="url(/image/p1.jpg)"; 
+head.style.backgroundImage="url(/image/p2.jpg)"; 
 head.style.backgroundSize = "100% 600px";
 head.style.backgroundRepeat = 'on-repeat';
 function time(){
