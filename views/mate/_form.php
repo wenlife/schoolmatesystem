@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\captcha\Captcha;
 use kartik\datetime\DateTimePicker;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mate */
@@ -46,7 +47,9 @@ foreach ($year as $key => $value) {
     <?= $form->field($model, 'email')->textInput(['maxlength' => true,'style'=>"width:300px"]) ?>
 
     <?= $form->field($model, 'commend')->textarea(['rows' => 6,'style'=>"width:600px"],['placeholder'=>"请输入推荐校友的姓名和电话"]) ?>
-
+    <?= $form->field($model,'verifyCode')->widget(Captcha::className(),['imageOptions'=>['class'=>"captcha"],'options'=>[
+'style'=>'width:300px'
+          ]]) ?>
     <div class="form-group">
         <?= Html::submitButton('提交信息', ['class' => 'btn btn-success']) ?>
     </div>

@@ -46,6 +46,24 @@ class MateController extends Controller
         ];
     }
 
+    public function actions()
+    {
+        return [
+            'error'=>[
+                'class'=>'yii\web\ErrorAction',
+            ],
+            'captcha'=>[
+                'class'=>'yii\captcha\captchaAction',
+                'fixedVerifyCode' => substr(rand(1000,9999),0),
+                'height'=>50,
+                'width'=>100,
+                'maxLength' => 4,
+                'minLength' => 4 ,
+            ],
+
+        ];
+    }
+
     /**
      * Lists all Mate models.
      * @return mixed

@@ -38,9 +38,9 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [ 
-            ['label' => '注册', 'url' => ['/site/signup']],
+            
             Yii::$app->user->isGuest ? (['label' => '加入校友会', 'url' => ['/mate/create']]):(['label' => '校友管理', 'url' => ['/mate']]),
-
+            ['label' => '注册', 'url' => ['/site/signup']],
             Yii::$app->user->isGuest ? (
                 ['label' => '登录', 'url' => ['/site/login']]
             ) : (

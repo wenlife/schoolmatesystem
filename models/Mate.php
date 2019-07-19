@@ -32,6 +32,7 @@ class Mate extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $verifyCode = null;
     public function rules()
     {
         return [
@@ -44,6 +45,7 @@ class Mate extends \yii\db\ActiveRecord
             [['address'], 'string', 'max' => 200],
             [['graduation', 'phone', 'teacher'], 'string', 'max' => 20],
             ['email','email','message'=>"这不是一个邮箱地址！"],
+            ['verifyCode','captcha','message'=>'请输入正确的验证码！']
         ];
     }
 
@@ -66,6 +68,7 @@ class Mate extends \yii\db\ActiveRecord
             'teacher' => '班主任姓名',
             'regtime' => '填表日期',
             'commend' => '优秀校友推荐（姓名+电话）',
+            'verifyCode'=>'验证码'
         ];
     }
 }
